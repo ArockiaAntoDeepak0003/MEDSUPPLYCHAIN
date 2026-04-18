@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #050d1a;
+  color: #e2e8f0;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(34,211,238,0.2); }
+  50%       { box-shadow: 0 0 20px rgba(34,211,238,0.5); }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.glow-cyan {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0a1628; }
+::-webkit-scrollbar-thumb { background: #164e63; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #22d3ee; }
+
+/* Input focus glow */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 1px rgba(34,211,238,0.4), 0 0 12px rgba(34,211,238,0.1);
+}
